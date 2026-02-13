@@ -1,0 +1,133 @@
+.weather-display {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-radius: 14px;
+  padding: 30px;
+  color: white;
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.weather-display::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: float 20s linear infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+
+.weather-display > * {
+  position: relative;
+  z-index: 1;
+}
+
+.weather-display h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+.weather-display p {
+  margin: 12px 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.weather-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.weather-info-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.weather-info-item label {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.weather-info-item value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+}
+
+.loading,
+.error,
+.info {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  animation: fadeIn 0.3s ease;
+  border-left: 4px solid;
+}
+
+.loading {
+  background-color: #e3f2fd;
+  color: #1565c0;
+  border-left-color: #1565c0;
+}
+
+.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border-left-color: #c62828;
+}
+
+.info {
+  background-color: #f3e5f5;
+  color: #6a1b9a;
+  border-left-color: #6a1b9a;
+}
+
+@media (max-width: 768px) {
+  .weather-display {
+    padding: 20px;
+  }
+
+  .weather-display h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-info {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .weather-info-item value {
+    font-size: 1.1rem;
+  }
+}

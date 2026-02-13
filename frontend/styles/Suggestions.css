@@ -1,0 +1,96 @@
+.search-section {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 4px 0;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  max-height: 250px;
+  overflow-y: auto;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestions-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.suggestions-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+.suggestions-list li {
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 3px solid transparent;
+  font-size: 0.95rem;
+}
+
+.suggestions-list li:hover {
+  background-color: #f8f9fa;
+  border-left-color: var(--primary);
+  padding-left: 11px;
+}
+
+.city-name {
+  font-weight: 600;
+  color: var(--text);
+  flex-grow: 1;
+}
+
+.city-info {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .suggestions-list {
+    max-height: 200px;
+  }
+
+  .suggestions-list li {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .city-info {
+    font-size: 0.75rem;
+  }
+}
