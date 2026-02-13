@@ -10,9 +10,9 @@ import '../../styles/Suggestions.css';
 
  */
 
-export const Suggestions = ({ suggestions, onSelect}) => {
+export const Suggestions = ({ suggestions, onSelect }) => {
 
-    if(suggestions.length === 0) {
+    if (suggestions.length === 0) {
         return null; //não renderiza nada se não houver sugestões
     }
 
@@ -22,8 +22,7 @@ export const Suggestions = ({ suggestions, onSelect}) => {
                 <li key={index} onClick={() => onSelect(suggestion.nome)}>
                     <span className="city-name">{suggestion.nome}</span>
                     <span className="city-info">
-                         
-                        {suggestion.estado && `${suggestion.estado}, `}{suggestion.pais} 
+                        {suggestion.estado && `${suggestion.estado}, `}{suggestion.pais}
                     </span>
                 </li>
             ))}

@@ -1,93 +1,79 @@
 #root {
   width: 100%;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
   padding: 20px;
 }
 
 .App {
   width: 100%;
-  max-width: 600px;
-  background: var(--surface);
-  border-radius: 16px;
+  max-width: 500px;
+  background-color: var(--surface);
+  border-radius: 24px;
   box-shadow: var(--shadow-lg);
-  padding: 40px 30px;
-  animation: slideUp 0.5s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
 
 .App h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .search-section {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
+  z-index: 10;
 }
 
 .weather-section {
-  margin-top: 30px;
+  margin-top: 2rem;
 }
 
 .loading,
 .error,
 .info {
   text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 1rem;
-  animation: fadeIn 0.3s ease;
+  padding: 1.5rem;
+  border-radius: 16px;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  animation: fadeIn 0.4s ease;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    transform: translateY(10px);
   }
+
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .loading {
   background-color: #e3f2fd;
-  color: #1565c0;
-  border-left: 4px solid #1565c0;
+  color: #1976d2;
 }
 
 .error {
   background-color: #ffebee;
   color: #c62828;
-  border-left: 4px solid #c62828;
 }
 
 .info {
   background-color: #f3e5f5;
-  color: #6a1b9a;
-  border-left: 4px solid #6a1b9a;
+  color: #7b1fa2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .App {
-    padding: 25px 20px;
-  }
-
-  .App h1 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
   }
 }
