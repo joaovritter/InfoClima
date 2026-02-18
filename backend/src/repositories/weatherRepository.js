@@ -18,7 +18,7 @@ class WeatherRepository {
         const url = `https://api.openweathermap.org/geo/1.0/direct?q=${encodedName}&limit=5&appid=${apiKey}`;
 
         const response = await axios.get(url);
-        return response.data
+        return response.data;
     }
 }
 export default WeatherRepository;

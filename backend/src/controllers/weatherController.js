@@ -1,5 +1,11 @@
 import weatherService from "../services/weatherService.js";
 
+
+/**
+ * Controller recebe requisições do front
+ * e chama o serviço para processar a lógica de negócio
+ * e depois retorna a resposta para o front
+ */
 class WeatherController{
     constructor(){
         this.weatherService = new weatherService();
